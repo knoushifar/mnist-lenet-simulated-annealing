@@ -1,4 +1,5 @@
-# Python
+.git
+.gitignore
 __pycache__/
 *.py[cod]
 *.pyo
@@ -7,19 +8,13 @@ __pycache__/
 .venv/
 venv/
 env/
-
-# Jupyter
 .ipynb_checkpoints/
-
-# Data and generated outputs
-MNIST/
-data/*.csv
-outputs/*
-!outputs/.gitkeep
-*.pt
-*.pth
-
-# OS/editor files
 .DS_Store
 .vscode/
 .idea/
+outputs/*
+!outputs/.gitkeep
+MNIST/
+data/*.csv
+*.pt
+*.pth

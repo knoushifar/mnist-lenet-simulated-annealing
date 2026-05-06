@@ -1,0 +1,8 @@
+services:
+  mnist-lenet-sa:
+    build: .
+    container_name: mnist-lenet-sa
+    volumes:
+      - ./outputs:/app/outputs
+      - ./data:/app/data
+    command: python src/train.py --epochs 5 --output-dir outputs

@@ -25,6 +25,9 @@ mnist-lenet-simulated-annealing/
 │   └── README.md
 ├── outputs/
 │   └── .gitkeep
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -52,6 +55,33 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
+
+## Docker Usage
+
+You can run this project inside Docker without installing Python dependencies directly on your machine.
+
+### Build the Docker image
+
+```bash
+docker build -t mnist-lenet-sa .
+```
+
+### Run training with Docker
+
+```bash
+docker run --rm -v "$(pwd)/outputs:/app/outputs" mnist-lenet-sa
+```
+
+This mounts your local `outputs/` folder into the container, so the trained model and plots are saved back to your project folder.
+
+### Run with Docker Compose
+
+```bash
+docker compose up --build
+```
+
+To change the training command, edit the `command` line in `docker-compose.yml`. For example, you can add `--optimize-lr` or change `--epochs 5`.
 
 ## Usage
 
